@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Confido Islamic Books",
+    "slug": "confido-islamic-books",
+    "scheme": "confidoislamicbooks",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#16332B"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset"
+    ]
+  }
+}
