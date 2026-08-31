@@ -22,38 +22,20 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="books"
         options={{
-          title: "Explore",
+          title: "Books",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="compass-outline" color={color} size={size} />
+            <Ionicons name="book-outline" color={color} size={size} />
           ),
         }}
       />
       <Tabs.Screen
-        name="upload"
+        name="dua"
         options={{
-          title: "Upload",
+          title: "Dua",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="add-circle" color={COLORS.darkGreen} size={size + 6} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="settings"
-        options={{
-          title: "Settings",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person-outline" color={color} size={size} />
+            <Ionicons name="hand-left-outline" color={color} size={size} />
           ),
         }}
       />

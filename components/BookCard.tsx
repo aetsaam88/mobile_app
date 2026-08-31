@@ -9,14 +9,26 @@ interface Props {
 }
 
 export default function BookCard({ book, onPress }: Props) {
-  const coverUri = book.coverUrl ?? getPageUrl(book, 1);
+  const imageSource = book.localCover
+    ? book.localCover
+    : { uri: book.coverUrl ?? getPageUrl(book, 1) };
 
   return (
     <Pressable
-      style={({ pressed }) => [styles.card, pressed && { opacity: 0.85 }]}
+      style={({ pressed }) => [
+        styles.card,
+        pressed && { opacity: 0.9, transform: [{ scale: 0.98 }] },
+      ]}
       onPress={() => onPress(book)}
     >
-      <Image source={{ uri: coverUri }} style={styles.cover} resizeMode="cover" />
+      <View style={styles.imageWrapper}>
+        <Image 
+          source={imageSource} 
+          style={styles.cover} 
+          resizeMode="cover" 
+        />
+      </View>
+
       <View style={styles.textWrap}>
         <Text style={styles.title} numberOfLines={1}>
           {book.title}
@@ -28,31 +40,41 @@ export default function BookCard({ book, onPress }: Props) {
     </Pressable>
   );
 }
-
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: "#FDFBF7",
     borderRadius: RADIUS.md,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: "#EAE6DF",
+    padding: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.04,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  imageWrapper: {
+    width: "100%",
+    aspectRatio: 1 / 1.1,
+    borderRadius: RADIUS.sm,
     overflow: "hidden",
+    backgroundColor: "#F4F0E8",
   },
   cover: {
     width: "100%",
-    aspectRatio: 3 / 4,
-    backgroundColor: COLORS.creamAlt,
+    height: "100%",
   },
   textWrap: {
-    padding: SPACING.sm,
+    paddingTop: SPACING.sm,
+    paddingHorizontal: 2,
   },
   title: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: "700",
     color: COLORS.textDark,
   },
   subtitle: {
-    fontSize: 12,
+    fontSize: 11,
     color: COLORS.textMuted,
     marginTop: 2,
   },
