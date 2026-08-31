@@ -29,17 +29,23 @@ export default function AppHeader({
 
   return (
     <View style={styles.header}>
+      {/* Left: Logo */}
       <View style={styles.leftContainer}>
         <Image
           source={logoSource}
           style={styles.logo}
           resizeMode="cover"
         />
+      </View>
+
+      {/* Center: Title */}
+      <View style={styles.centerContainer}>
         <Text style={styles.title} numberOfLines={1}>
           {title}
         </Text>
       </View>
 
+      {/* Right: Profile / Avatar */}
       <Pressable 
         onPress={handlePress} 
         style={styles.profileButton}
@@ -68,30 +74,35 @@ const styles = StyleSheet.create({
     zIndex: 99,
   },
   leftContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    width: 48, 
+    justifyContent: "center",
+  },
+  centerContainer: {
     flex: 1,
-    marginRight: SPACING.sm,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: SPACING.sm,
   },
   logo: {
     width: 43, 
     height: 43,
-    borderRadius: 24,
-    marginRight: 12,
+    borderRadius: 21.5,
   },
   title: {
     fontSize: 20,
     fontWeight: "800",
     color: COLORS.cream,
-    flexShrink: 1,
+    textAlign: "center",
   },
   profileButton: {
+    width: 48, 
+    height: 48,
     justifyContent: "center",
-    alignItems: "center",
-    padding: 4,
+    alignItems: "center", // "flex-end" ko "center" kar diya hai
+    overflow: "hidden",  // Extra overflow ko rokne ke liye
   },
   avatar: {
-    width: 48,  // Avatar size adjusted to 48
+    width: 48,
     height: 48,
     borderRadius: 24,
   },
