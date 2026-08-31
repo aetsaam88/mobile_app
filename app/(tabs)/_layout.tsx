@@ -39,6 +39,14 @@ export default function TabsLayout() {
           ),
         }}
       />
+
+      {/* This hides the Profile screen from the bottom tab bar */}
+      <Tabs.Screen
+        name="profile" 
+        options={{
+          href: null,
+        }}
+      />
     </Tabs>
   );
 }

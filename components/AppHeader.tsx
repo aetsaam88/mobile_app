@@ -23,8 +23,7 @@ export default function AppHeader({
     if (onProfilePress) {
       onProfilePress();
     } else {
-      // Agar prop pass na ho toh direct drawer folder par le jaye ga
-      router.push("/drawer" as any);
+      router.push("/profile" as any);
     }
   };
 
@@ -41,7 +40,6 @@ export default function AppHeader({
         </Text>
       </View>
 
-      {/* Profile Icon Click -> Opens Drawer / Route */}
       <Pressable 
         onPress={handlePress} 
         style={styles.profileButton}
@@ -50,7 +48,7 @@ export default function AppHeader({
         {userImageUri ? (
           <Image source={{ uri: userImageUri }} style={styles.avatar} />
         ) : (
-          <Ionicons name="person-circle" size={44} color={COLORS.cream} />
+          <Ionicons name="person-circle" size={48} color={COLORS.cream} />
         )}
       </Pressable>
     </View>
@@ -76,9 +74,9 @@ const styles = StyleSheet.create({
     marginRight: SPACING.sm,
   },
   logo: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 43, 
+    height: 43,
+    borderRadius: 24,
     marginRight: 12,
   },
   title: {
@@ -93,8 +91,8 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   avatar: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+    width: 48,  // Avatar size adjusted to 48
+    height: 48,
+    borderRadius: 24,
   },
 });
