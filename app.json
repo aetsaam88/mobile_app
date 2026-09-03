@@ -1,18 +1,21 @@
 {
   "expo": {
-    "name": "Confido Islamic Books",
-    "slug": "confido-islamic-books",
-    "scheme": "confidoislamicbooks",
+    "name": "Eman Quran Islamic Books",
+    "slug": "eman-quran-islamic-books",
+    "scheme": "emanquranislamicbooks",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "icon": "./assets/icon.png",
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.emanquran.islamicbooks",
       "adaptiveIcon": {
-        "backgroundColor": "#16332B"
+        "foregroundImage": "./assets/adaptive-icon/foreground.png",
+        "backgroundImage": "./assets/adaptive-icon/background.png"
       }
     },
     "plugins": [
@@ -20,13 +23,18 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/splash-icon.png",
-          
+          "image": "./assets/splash.png",
           "imageWidth": 180,
           "resizeMode": "contain",
-          "backgroundColor": "#16332B"
+          "backgroundColor": "#fefaea"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3acc24ff-d1fc-4aa2-97b1-dbde6436e458"
+      },
+      "router": {}
+    }
   }
 }

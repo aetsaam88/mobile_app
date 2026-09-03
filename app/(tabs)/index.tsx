@@ -76,7 +76,7 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.screen}>
-      <AppHeader title="Confido Islamic Books" />
+      <AppHeader title="Eman Quran Islamic Books" />
 
       <ScrollView
         contentContainerStyle={styles.body}

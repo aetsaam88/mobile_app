@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { COLORS } from "../../constants/theme";
 
@@ -35,12 +35,11 @@ export default function TabsLayout() {
         options={{
           title: "Dua",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="hand-left-outline" color={color} size={size} />
+            <FontAwesome5 name="hands" size={size} color={color} />
           ),
         }}
       />
 
-      {/* This hides the Profile screen from the bottom tab bar */}
       <Tabs.Screen
         name="profile" 
         options={{

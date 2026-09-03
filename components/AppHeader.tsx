@@ -14,7 +14,7 @@ interface Props {
 export default function AppHeader({ 
   title, 
   userImageUri, 
-  logoSource = require("../assets/logo.png"), 
+  logoSource = require("../assets/header_icon.png"), 
   onProfilePress 
 }: Props) {
   const router = useRouter();
@@ -40,7 +40,7 @@ export default function AppHeader({
 
       {/* Center: Title */}
       <View style={styles.centerContainer}>
-        <Text style={styles.title} numberOfLines={1}>
+        <Text style={styles.title} numberOfLines={2}>
           {title}
         </Text>
       </View>
@@ -54,7 +54,7 @@ export default function AppHeader({
         {userImageUri ? (
           <Image source={{ uri: userImageUri }} style={styles.avatar} />
         ) : (
-          <Ionicons name="person-circle" size={48} color={COLORS.cream} />
+          <Ionicons name="person-circle" size={55} color={COLORS.cream} />
         )}
       </Pressable>
     </View>
@@ -74,8 +74,10 @@ const styles = StyleSheet.create({
     zIndex: 99,
   },
   leftContainer: {
-    width: 48, 
+    width: 55, 
+    height: 55,
     justifyContent: "center",
+    alignItems: "center",
   },
   centerContainer: {
     flex: 1,
@@ -84,26 +86,27 @@ const styles = StyleSheet.create({
     paddingHorizontal: SPACING.sm,
   },
   logo: {
-    width: 43, 
-    height: 43,
-    borderRadius: 21.5,
+    width: 55, 
+    height: 55,
+    borderRadius: 10,
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "800",
+    marginTop: 4,
     color: COLORS.cream,
     textAlign: "center",
   },
   profileButton: {
-    width: 48, 
-    height: 48,
+    width: 55, 
+    height: 55,
     justifyContent: "center",
-    alignItems: "center", // "flex-end" ko "center" kar diya hai
-    overflow: "hidden",  // Extra overflow ko rokne ke liye
+    alignItems: "center", 
+    overflow: "hidden",  
   },
   avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+    width: 55,
+    height: 55,
+    borderRadius: 27.5,
   },
 });

@@ -245,9 +245,9 @@ const styles = StyleSheet.create({
     marginBottom: SPACING.sm,
   },
   avatar: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 55,
+    height: 55,
+    borderRadius: 27.5,
     backgroundColor: COLORS.darkGreen,
     alignItems: "center",
     justifyContent: "center",
